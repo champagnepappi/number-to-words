@@ -1,46 +1,46 @@
 class Num
   def number_in_words(n)
     numbers = {0=>'',
-           1=>'one',
-           2=>'two',
-           3=>'three',
-           4=>'four',
-           5=> 'five',
-           6=>'six',
-           7=>'seven',
-           8=>'eight',
-           9=>'nine',
-           10=>'ten',
-           11=>'eleven',
-           12=>'twelve',
-           13=>'thirteen',
-           14=>'fourteen', 
-           15=>'fifteen',
-           16=>'sixteen',
-           17=>'seventeen',
-           18=>'eighteen',
-           19=>'nineteen',
-           20=>'twenty',
-           30=>'thirty',
-           40=>'fourty',
-           50=>'fifty',
-           60=>'sixty',
-           70=>'seventy',
-           80=>'eighty',
-           90=>'ninety'}
+           1=>'One',
+           2=>'Two',
+           3=>'Three',
+           4=>'Four',
+           5=> 'Five',
+           6=>'Six',
+           7=>'Seven',
+           8=>'Eight',
+           9=>'Nine',
+           10=>'Ten',
+           11=>'Eleven',
+           12=>'Twelve',
+           13=>'Thirteen',
+           14=>'Fourteen', 
+           15=>'Fifteen',
+           16=>'Sixteen',
+           17=>'Seventeen',
+           18=>'Eighteen',
+           19=>'Nineteen',
+           20=>'Twenty',
+           30=>'Thirty',
+           40=>'Fourty',
+           50=>'Fifty',
+           60=>'Sixty',
+           70=>'Seventy',
+           80=>'Eighty',
+           90=>'Ninety'}
 
     new_numbers = n.to_s.split(//)
 
     if new_numbers.length == 3 && new_numbers[1..-1].all?{|num| num.to_i == 0}
-      numbers[new_numbers[0].to_i].capitalize + ' hundred'
+      numbers[new_numbers[0].to_i] + ' Hundred'
     elsif new_numbers.length == 3 
-      numbers[new_numbers[0].to_i].capitalize + ' hundred' + ' ' +  numbers[new_numbers[1].to_i*10] +
+      numbers[new_numbers[0].to_i] + ' Hundred' + ' ' +  numbers[new_numbers[1].to_i*10] +
         + ' ' + numbers[new_numbers[-1].to_i]
     elsif new_numbers.length == 4 && new_numbers[1..-1].all?{|num| num.to_i == 0}
-      numbers[new_numbers[0].to_i].capitalize + ' thousand'
+      numbers[new_numbers[0].to_i] + ' Thousand'
     elsif new_numbers.length == 4
-      numbers[new_numbers[0].to_i].capitalize + ' thousand ' +  numbers[new_numbers[1].to_i].capitalize + 
-        ' hundred' + ' ' +  numbers[new_numbers[2].to_i*10] + ' ' + numbers[new_numbers[-1].to_i]
+      numbers[new_numbers[0].to_i] + ' Thousand ' +  numbers[new_numbers[1].to_i] + 
+        ' Hundred' + ' ' +  numbers[new_numbers[2].to_i*10] + ' ' + numbers[new_numbers[-1].to_i]
     end
   end
 end
