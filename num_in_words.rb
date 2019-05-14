@@ -31,11 +31,15 @@ class Num
 
     new_numbers = n.to_s.split(//)
 
-    if new_numbers.length == 3 && new_numbers[1..-1].all?{|num| num.to_i == 0}
-      numbers[new_numbers[0].to_i] + ' Hundred'
+    if new_numbers.length == 1
+      numbers[n.to_i]
+    elsif new_numbers.length == 2
+      result = numbers[new_numbers[0].to_i*10] + ' ' + numbers[new_numbers[1].to_i]
+      result.rstrip
     elsif new_numbers.length == 3 
-      numbers[new_numbers[0].to_i] + ' Hundred' + ' ' +  numbers[new_numbers[1].to_i*10] +
+      result = numbers[new_numbers[0].to_i] + ' Hundred' + ' ' +  numbers[new_numbers[1].to_i*10] +
         + ' ' + numbers[new_numbers[-1].to_i]
+      result.rstrip
     elsif new_numbers.length == 4 && new_numbers[1..-1].all?{|num| num.to_i == 0}
       numbers[new_numbers[0].to_i] + ' Thousand'
     elsif new_numbers.length == 4
